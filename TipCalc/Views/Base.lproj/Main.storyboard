@@ -70,6 +70,9 @@
                                                             <segment title="20%"/>
                                                             <segment title="25%"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="tipSelectionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="m3M-6o-5fA"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
@@ -99,6 +102,9 @@
                                                             </label>
                                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-5i-tWT">
                                                                 <rect key="frame" x="73.5" y="0.0" width="94" height="40"/>
+                                                                <connections>
+                                                                    <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xnU-T7-V22"/>
+                                                                </connections>
                                                             </stepper>
                                                         </subviews>
                                                     </stackView>
@@ -144,6 +150,9 @@
                                     <color key="baseForegroundColor" systemColor="systemPinkColor"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="calculateButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aU8-2B-Vsy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -160,6 +169,12 @@
                             <constraint firstAttribute="bottom" secondItem="g48-iZ-R4U" secondAttribute="bottom" id="yuf-qB-Hnx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billTextField" destination="Nt0-Gg-ORt" id="IaJ-81-nPn"/>
+                        <outlet property="roundingToggle" destination="dV3-fO-GCh" id="7Rn-ym-Md9"/>
+                        <outlet property="splitLabel" destination="i2N-YS-5l4" id="5Z2-LO-hHP"/>
+                        <outlet property="tipSegmentedControl" destination="x0C-A1-gjJ" id="tv5-04-scj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,6 +235,9 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                     <color key="baseBackgroundColor" red="0.84313725490000002" green="0.36078431370000003" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="recalculateButtonClicked:" destination="HGW-NW-sFf" eventType="touchUpInside" id="5gE-2H-yRv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EjF-Cr-ZKM"/>
@@ -235,6 +253,10 @@
                             <constraint firstItem="8uf-4z-gdh" firstAttribute="leading" secondItem="EjF-Cr-ZKM" secondAttribute="leading" constant="50" id="zOZ-is-FCH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="NfO-MB-9pe" id="OXK-ql-BQR"/>
+                        <outlet property="settingsLabel" destination="8uf-4z-gdh" id="1Nx-td-iDO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAW-e3-J50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
