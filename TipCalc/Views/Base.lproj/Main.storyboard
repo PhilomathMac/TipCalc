@@ -28,13 +28,13 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 24.95" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nt0-Gg-ORt">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 24.95" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nt0-Gg-ORt">
                                         <rect key="frame" x="0.0" y="48" width="414" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="0MG-tg-3qA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="202" width="414" height="694"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="LNg-6y-BV8" userLabel="SettingsStack">
-                                        <rect key="frame" x="10" y="10" width="394" height="352"/>
+                                        <rect key="frame" x="10" y="10" width="394" height="221"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4yd-Cy-tQ1" userLabel="Tip Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="81"/>
@@ -62,7 +62,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x0C-A1-gjJ">
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="x0C-A1-gjJ">
                                                         <rect key="frame" x="0.0" y="50" width="394" height="32"/>
                                                         <segments>
                                                             <segment title="10%"/>
@@ -100,7 +100,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-5i-tWT">
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-5i-tWT">
                                                                 <rect key="frame" x="73.5" y="0.0" width="94" height="40"/>
                                                                 <connections>
                                                                     <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xnU-T7-V22"/>
@@ -125,10 +125,18 @@
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV3-fO-GCh">
                                                         <rect key="frame" x="172.5" y="50" width="51" height="31"/>
                                                         <color key="onTintColor" systemColor="systemCyanColor"/>
+                                                        <connections>
+                                                            <action selector="roundingToggleChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zsl-sA-v3d"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="8ak-CU-Pay"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -174,18 +182,19 @@
                         <outlet property="roundingToggle" destination="dV3-fO-GCh" id="7Rn-ym-Md9"/>
                         <outlet property="splitLabel" destination="i2N-YS-5l4" id="5Z2-LO-hHP"/>
                         <outlet property="tipSegmentedControl" destination="x0C-A1-gjJ" id="tv5-04-scj"/>
+                        <segue destination="HGW-NW-sFf" kind="presentation" identifier="goToResults" id="R0v-cI-wk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278.46153846153845" y="138.6255924170616"/>
+            <point key="canvasLocation" x="-319" y="138"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="OGV-RQ-sdK">
             <objects>
                 <viewController id="HGW-NW-sFf" customClass="ResultsViewController" customModule="TipCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nQa-cN-p8S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qo-vh-ZaP">
@@ -225,7 +234,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpd-y3-hOh">
-                                <rect key="frame" x="107" y="808" width="200" height="54"/>
+                                <rect key="frame" x="107" y="788" width="200" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="KQR-iG-6XQ"/>
                                     <constraint firstAttribute="height" constant="54" id="onj-Ms-Pze"/>
