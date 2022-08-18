@@ -1,7 +1,7 @@
 # TipCalc
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/93546810/183767042-279780cd-9ed7-4fad-95e0-22d52067fc63.png" alt="TipCalc Screenshot" width="200"/>
+  <img src="https://github.com/PhilomathMac/TipCalc/blob/main/PortfolioImage.png?raw=true" alt="TipCalc Screenshot" width="200"/>
 </p>
 
 ## Description
